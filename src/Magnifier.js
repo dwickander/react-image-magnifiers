@@ -30,7 +30,7 @@ const Magnifier = props => {
   } = props;
 
   const finalActiveCursorStyle =
-    cursorStyleActive || dragToMove ? "move" : "zoom-out";
+    cursorStyleActive || (dragToMove ? "move" : "zoom-out");
 
   return (
     <ReactInputPosition
