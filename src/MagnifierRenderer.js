@@ -19,8 +19,8 @@ const MagnifierRenderer = props => {
     onLargeImageLoad,
     onLoadRefresh
   } = props;
-
-  const legalSize = itemDimensions.width > elementDimensions.width;
+  //if width = 0 unfortunately dimensions did not get calculated yet for the item, but I am going to let it return true for my purposes
+  const legalSize = itemDimensions.width === 0 || itemDimensions.width > elementDimensions.width;
   const isActive = legalSize && active;
   const finalCursorStyle = !legalSize
     ? "default"
